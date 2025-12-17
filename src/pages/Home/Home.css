@@ -1,0 +1,100 @@
+.home {
+  background-color: #ffffff;
+  height: calc(100vh - 80px);
+  width: 100vw;
+}
+
+.account-button1 {
+  color: #fe5000 !important;
+  border-radius: 30px !important;
+  border: 2px solid #fe5000 !important;
+  position: fixed !important;
+  right: 20px !important;
+  top: 20px !important;
+}
+
+.home-content {
+  display: flex;
+  position: relative;
+  top: 80px;
+}
+
+.account-button2 {
+  color: #ffffff !important;
+  border-radius: 30px !important;
+  border: 2px solid #fe5000 !important;
+  background-color: #fe5000 !important;
+  position: relative !important;
+}
+
+.content-box {
+  /* border: 2px solid #252b42 !important; */
+  width: 400px;
+  margin-left: 50px;
+  margin-top: 50px;
+  position: relative;
+  left: 50px;
+  top: 50px;
+  z-index: 1;
+}
+
+.content-box > p {
+  color: #252b42 !important;
+  font-size: 20px !important;
+  margin-bottom: 60px !important;
+}
+
+.content-box > h1 {
+  font-size: 50px !important;
+}
+
+.image-box {
+  /* border: 2px solid #08195e !important; */
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  /* overflow: hidden; */
+}
+
+.shape {
+  width: 900px;
+  height: 450px;
+  background: rgba(254, 80, 0, 0.27);
+  border-radius: 40px 0 0 40px;
+  transform: rotate(-6deg) skewX(-8deg);
+  -webkit-transform: rotate(-1deg) skewX(-8deg);
+  position: relative;
+  /* overflow: hidden; */
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-box {
+    margin: 30px;
+    top: 20px;
+    left: 0;
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .image-box {
+    position: relative;
+    width: 100%;
+    top: 20px;
+    right: 0;
+    margin-top: 20px;
+  }
+
+  .account-button2 {
+    position: relative !important;
+    left: 40% !important;
+  }
+  
+}

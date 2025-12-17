@@ -1,0 +1,36 @@
+.body{
+    margin: 0;
+    padding: 0;
+    /* background-color: #9a3535; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: static;
+}
+
+.footer-body{
+    /* border: 2px solid rgb(26, 147, 10); */
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    color: #747070 !important;
+}
+
+.footer-mail{
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+}
+
+.footer-content{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+
+

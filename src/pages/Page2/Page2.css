@@ -1,6 +1,6 @@
 :root, * { box-sizing: border-box; }
 
-#root {
+/* #root {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -11,7 +11,7 @@
   padding:0;
   position: absolute;
   background-color: #db1a1a;
-}
+} */
 
 
 .home {
@@ -19,7 +19,7 @@
   height: calc(100vh - 80px);
   width: 100vw;
   /* border: 2px solid #fe5000 !important; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .account-button1 {
@@ -91,7 +91,27 @@
   -webkit-transform: rotate(1deg) skewX(8deg);
 }
 
+.imge-component > h3{
+    position: absolute;
+    top: -10px;
+    left: 420px;
+    /* border: 2px solid #252b42 !important; */
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .home{
+    /* overflow: hidden; */
+  }
+}
+
 @media only screen and (max-width: 1200px) {
+
+  
+
   .home-content {
     flex-direction: column;
     align-items: center;

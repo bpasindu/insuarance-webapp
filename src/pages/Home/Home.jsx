@@ -13,6 +13,8 @@ import man4 from "../../assets/man4.png";
 import man5 from "../../assets/man5.png";
 import man6 from "../../assets/man6.png";
 import man7 from "../../assets/man7.png";
+import { Link } from "react-router-dom";
+import Footer from "../../common/component/Footer/Footer";
 
 export default function Home() {
   return (
@@ -30,14 +32,17 @@ export default function Home() {
             Life Insurance <br></br> Made Simple
           </h1>
           <p>Find your goals and plan your future </p>
+          <Link to="/page2" style={{ textDecoration: 'none' }}> 
           <Stack spacing={2} direction="row">
           <Button variant="contained" className="account-button2">
             get started
           </Button>
         </Stack>
+        </Link>
         </div>
         <div className="image-box">
           <div className="shape">
+            <div className="imge-component">
             <Manstand imgman={man1} width="170px" top="-50px" left="170px"/>
             <Manstand imgman={man2} width="250px" top="-70px" left="370px"/>
             <Manstand imgman={man3} width="200px" top="-40px" left="700px"/>
@@ -46,10 +51,12 @@ export default function Home() {
             <Manstand imgman={man4} width="140px" top="290px" left="140px"/>
             <Manstand imgman={man5} width="150px" top="240px" left="320px"/>
             <Manstand imgman={man6} width="160px" top="230px" left="550px"/>
-            <Manstand imgman={man7} width="170px" top="230px" left="740px"/>
+            <Manstand imgman={man7} width="170px" top="230px" left="730px"/>
+          </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -27,6 +27,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import PeopleIcon from "@mui/icons-material/People";
 import WomanIcon from '@mui/icons-material/Woman';
+import ManIcon from '@mui/icons-material/Man';
 import { useSelector } from "react-redux";
 
 
@@ -69,6 +70,9 @@ export default function Page4() {
     (personalDetails.title === "Male" && "male") ||
     "";
   const age = computeAgeFromDob(personalDetails.dob);
+
+  const spouseLabelText = genderLabel === "female" ? "My husband is" : "My wife is";
+  const SpouseIcon = genderLabel === "female" ? ManIcon : WomanIcon;
 
   return (
     <div className="page4">
@@ -116,24 +120,28 @@ export default function Page4() {
             </ToggleButton>
           </ToggleButtonGroup>
 
-          <Typography sx={{ fontSize: 14, color: "#9aa0a6", mb: 0.5, mt: 3 }}>
-            My wife is
-          </Typography>
+          {status === "married" && (
+            <>
+              <Typography sx={{ fontSize: 14, color: "#9aa0a6", mb: 0.5, mt: 3 }}>
+                {spouseLabelText}
+              </Typography>
 
-          <TextField
-            id="wife-name"
-            placeholder="Dilu"
-            variant="outlined"
-            size="small"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <WomanIcon sx={{ color: "#9aa0a6" }} />
-                </InputAdornment>
-              ),
-            }}
-            sx={{ width: 320, borderRadius: 2, boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}
-          />
+              <TextField
+                id="spouse-name"
+                placeholder="Dilu"
+                variant="outlined"
+                size="small"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SpouseIcon sx={{ color: "#9aa0a6" }} />
+                    </InputAdornment>
+                  ),
+                }}
+                sx={{ width: 320, borderRadius: 2, boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}
+              />
+            </>
+          )}
 
           <Link to="/page5" style={{ textDecoration: "none", display: "block", marginTop: 40 }}>
             <Stack spacing={2} direction="row" justifyContent="center">

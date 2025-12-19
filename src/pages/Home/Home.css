@@ -9,8 +9,8 @@
   padding: 2rem;
   margin:0;
   padding:0;
-  position: absolute;
-  background-color: #db1a1a;
+  position: fixed;
+  background-color: #fdfdfd;
 }
 
 
@@ -19,7 +19,7 @@
   height: calc(100vh - 80px);
   width: 100vw;
   /* border: 2px solid #fe5000 !important; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .account-button1 {

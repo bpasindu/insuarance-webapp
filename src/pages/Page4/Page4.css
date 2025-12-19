@@ -1,0 +1,114 @@
+body{
+    background-color: #ffffff;
+}
+
+.page4 {
+  background-color: #ffffff; 
+}
+
+.page4 .card2{
+    margin-left: 25%;
+    margin-top: 0px;
+    width: 700px;
+    height: fit-content;
+}
+
+.page4 .card1{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: white;
+    color: black;
+    padding: 5px 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.page4 .home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 30px;
+  left: 25%;
+  color: rgb(8, 0, 0);
+}
+
+.page4 .home-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:120px;
+  color:rgb(8,0,0);
+}
+
+.page4 .home-content .intro{
+  margin:6px 0;
+  color:#4a4a4a;
+  font-size:22px;
+}
+
+.page4 .home-content .hl{
+  color:#fe5000;
+  font-weight:600;
+}
+
+.page4 .marry-box{
+  margin-top:30px;
+  /* text-align:center; */
+  width:520px;
+  margin-left:240px;
+}
+
+.page4 .marry-box h2{
+  font-size:32px;
+  font-weight:800;
+  margin:20px 0 18px;
+}
+
+.page4 .status-toggle{
+  display:inline-flex;
+  background:transparent;
+  border-radius:20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  overflow:hidden;
+}
+
+.page4 .status-toggle .MuiToggleButton-root{
+  text-transform:none;
+  border:none;
+  padding:10px 22px;
+  border-radius:0;
+  background:#fff;
+  color:#333;
+}
+.page4 .status-toggle .MuiToggleButton-root.Mui-selected{
+  background:#fe5000;
+  color:#fff;
+  box-shadow:none;
+}
+
+.page4 .status-toggle .toggle-left{ border-top-left-radius:10px; border-bottom-left-radius:10px; }
+.page4 .status-toggle .toggle-right{ border-top-right-radius:10px; border-bottom-right-radius:10px; }
+
+.page4 .marry-box .MuiTextField-root{
+  margin-top:8px;
+}
+.page4 .marry-box .MuiOutlinedInput-root{
+  border-radius:10px;
+}
+
+.page4 .account-button2{
+  background:#fe5000;
+  border-radius:24px;
+  padding:10px 36px;
+  text-transform:none;
+  box-shadow:none;
+}

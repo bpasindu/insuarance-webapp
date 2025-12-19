@@ -1,5 +1,5 @@
 import React from "react";
-import "./Drawer.css";
+import "./Footer.css";
 import Badge from "@mui/material/Badge";
 import Stack from "@mui/material/Stack";
 import MailIcon from "@mui/icons-material/Mail";
@@ -7,13 +7,10 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Navbar from "../../common/component/Navbar/Navbar";
-import Home from "../Home/Home";
 
-export default function Drawer() {
+export default function Footer() {
   return (
     <div className="body">
-      <Home />
       <footer>
         <div className="footer-body">
           <div className="footer-mail">

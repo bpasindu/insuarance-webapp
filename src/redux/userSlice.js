@@ -1,28 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  basicDetails: {
-    title: "",
-    firstName: "",
-    lastName: "",
-    age: null,
-    maritalStatus: "", // "single" | "married"
-    spouseName: "",
-  },
+  step: 1,  
+  data: {}  
 };
 
-const userSlice = createSlice({
-  name: "user",
+const formSlice = createSlice({
+  name: "form",
   initialState,
   reducers: {
-    saveBasicDetails(state, action) {
-      state.basicDetails = { ...state.basicDetails, ...action.payload };
+    nextStep: (state) => {
+      state.step += 1;  
     },
-    clearBasicDetails(state) {
-      state.basicDetails = initialState.basicDetails;
-    },
-  },
+    saveData: (state, action) => {
+      state.data = { ...state.data, ...action.payload };
+    }
+  }
 });
 
-export const { saveBasicDetails, clearBasicDetails } = userSlice.actions;
-export default userSlice.reducer;
+export const { nextStep, saveData } = formSlice.actions;
+export default formSlice.reducer;

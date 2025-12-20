@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import insuaranceReducer from "../features/insuarance/insuaranceSlice";
+import userReducer from "../redux/userSlice";
 
 export const store = configureStore({
   reducer: {
-    insurance: insuaranceReducer,
-  }
+    user: userReducer,
+  },
 });

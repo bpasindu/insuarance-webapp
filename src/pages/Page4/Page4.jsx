@@ -26,52 +26,35 @@ import { styled } from "@mui/material/styles";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import PeopleIcon from "@mui/icons-material/People";
-import WomanIcon from '@mui/icons-material/Woman';
-import ManIcon from '@mui/icons-material/Man';
-import { useSelector } from "react-redux";
+import WomanIcon from "@mui/icons-material/Woman";
+import ManIcon from "@mui/icons-material/Man";
 
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
-
-
+import { useSelector, useDispatch } from "react-redux";
+import { saveData } from "../../redux/userSlice";
 
 export default function Page4() {
-  const [status, setStatus] = React.useState("single");
+  const dispatch = useDispatch();
+
+  const data = useSelector((state) => state.user.data);
+
+  const [status, setStatus] = React.useState(data.maritalStatus || "single");
+
   const handleStatus = (event, newStatus) => {
-    if (newStatus !== null) setStatus(newStatus);
-  };
-
-  // read stored personal details from Page3
-  const personalDetails = useSelector((s) => s.insurance?.personalDetails || {});
-
-  const computeAgeFromDob = (dob) => {
-    if (!dob) return null;
-    let parts;
-    let dt = new Date(dob);
-    if (isNaN(dt)) {
-      parts = String(dob).split("-");
-      if (parts.length === 3) dt = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+    if (newStatus !== null) {
+      setStatus(newStatus);
+      dispatch(saveData({ maritalStatus: newStatus }));
     }
-    if (isNaN(dt)) return null;
-    const diff = Date.now() - dt.getTime();
-    return Math.abs(new Date(diff).getUTCFullYear() - 1970);
   };
 
-  const displayName = personalDetails.firstName || "";
+  const displayName = data.firstName || "";
   const genderLabel =
-    (personalDetails.title === "Female" && "female") ||
-    (personalDetails.title === "Male" && "male") ||
-    "";
-  const age = computeAgeFromDob(personalDetails.dob);
+    data.title === "Female" ? "female" : data.title === "Male" ? "male" : "";
 
-  const spouseLabelText = genderLabel === "female" ? "My husband is" : "My wife is";
+  const age = data.age ?? "";
+
+  const spouseLabelText =
+    genderLabel === "female" ? "My husband is" : "My wife is";
+
   const SpouseIcon = genderLabel === "female" ? ManIcon : WomanIcon;
 
   return (
@@ -88,11 +71,11 @@ export default function Page4() {
 
       <div className="home-content">
         <p className="intro">
-          My name is <span className="hl">{displayName || "—"}</span>
+          My name is <span className="hl">{displayName}</span>
         </p>
         <p className="intro">
-          And I am <span className="hl">{genderLabel || "—"}</span> of{" "}
-          <span className="hl">{age !== null ? `${age} years old.` : "—"}</span>
+          And I am <span className="hl">{genderLabel}</span> of{" "}
+          <span className="hl">{age} years old.</span>
         </p>
 
         <div className="marry-box">
@@ -110,11 +93,11 @@ export default function Page4() {
             aria-label="marital status"
             size="small"
           >
-            <ToggleButton value="single" aria-label="single" className="toggle-left">
+            <ToggleButton value="single" className="toggle-left">
               <PersonIcon fontSize="small" sx={{ mr: 1 }} />
               Single
             </ToggleButton>
-            <ToggleButton value="married" aria-label="married" className="toggle-right">
+            <ToggleButton value="married" className="toggle-right">
               <PeopleIcon fontSize="small" sx={{ mr: 1 }} />
               Married
             </ToggleButton>
@@ -131,6 +114,10 @@ export default function Page4() {
                 placeholder="Dilu"
                 variant="outlined"
                 size="small"
+                value={data.spouseName || ""}
+                onChange={(e) =>
+                  dispatch(saveData({ spouseName: e.target.value }))
+                }
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -138,12 +125,12 @@ export default function Page4() {
                     </InputAdornment>
                   ),
                 }}
-                sx={{ width: 320, borderRadius: 2, boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}
+                sx={{ width: 320 }}
               />
             </>
           )}
 
-          <Link to="/page5" style={{ textDecoration: "none", display: "block", marginTop: 40 }}>
+          <Link to="/page5" style={{ textDecoration: "none", marginTop: 40 }}>
             <Stack spacing={2} direction="row" justifyContent="center">
               <Button variant="contained" className="account-button2">
                 Next <ArrowForwardIcon />

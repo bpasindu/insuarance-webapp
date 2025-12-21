@@ -1,5 +1,63 @@
-.home-content1{
-    margin-top:90px;
-    margin-left:50px;
-    color:rgb(8,0,0);
+.home-content1 {
+  margin-top: 90px;
+  margin-left: 50px;
+  color: rgb(8, 0, 0);
 }
+
+.home-content1 {
+  max-width: 100%;
+  margin: 90px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+
+
+.home-content1 > h1 {
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 8px 0 20px;
+}
+
+.home-content1 > h2 {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #000000;
+  margin: 8px 0 20px;
+}
+
+.goal-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.goal-buttons .goal-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-transform: none;
+}
+
+.home-content1 > .goal-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 20px;
+    /* align-items: start; */
+    /* margin-bottom: 48px; */
+}
+
+
+
+
+
+
+
+
+  

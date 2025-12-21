@@ -1,0 +1,19 @@
+.goalcard{
+    position: relative;
+}
+
+.goalcard-img{
+    width: 340px;
+    height: 180px;
+    position: relative;
+    filter: brightness(70%);
+}
+
+.goalcard-text{
+    margin-top:10px;
+    font-size:40px;
+    font-weight:30px;
+    color:#ffffff;
+    position: absolute;
+    bottom: 5px;
+}

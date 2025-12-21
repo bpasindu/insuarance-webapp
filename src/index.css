@@ -1,10 +1,13 @@
+html, body {
+  height: 100%;
+  overflow-y: auto; 
+}
+
 #root {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  margin:0;
-  padding:0;
-  position: sticky;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 100vh; 
+  max-width: none; 
+  margin: 0;
+  padding: 0;
 }

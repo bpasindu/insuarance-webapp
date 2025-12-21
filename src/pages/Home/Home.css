@@ -1,6 +1,6 @@
-:root, * { box-sizing: border-box; }
+/* :root, * { box-sizing: border-box; } */
 
-#root {
+/* #root {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -11,7 +11,7 @@
   padding:0;
   position: fixed;
   background-color: #fdfdfd;
-}
+} */
 
 
 .home {
@@ -29,6 +29,7 @@
   position: fixed !important;
   right: 20px !important;
   top: 20px !important;
+  font-family: 'Montserrat' sans-serif !important;
 }
 
 .home-content {
@@ -64,6 +65,11 @@
 
 .content-box > h1 {
   font-size: 50px !important;
+  font-family: 'Inter', sans-serif;
+}
+
+.content-box > p{
+  font-family: 'Manrope', sans-serif;
 }
 
 .image-box {
@@ -95,6 +101,7 @@
   .home-content {
     flex-direction: column;
     align-items: center;
+    height: fit-content;
   }
 
   .content-box {

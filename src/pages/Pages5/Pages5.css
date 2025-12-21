@@ -2,18 +2,18 @@ body{
     background-color: #ffffff;
 }
 
-.page4 {
+.page5 {
   background-color: #ffffff; 
 }
 
-.page4 .card2{
+.page5 .card2{
     margin-left: 25%;
     margin-top: 0px;
     width: 700px;
     height: fit-content;
 }
 
-.page4 .card1{
+.page5 .card1{
     width: 350px;
     display: flex;
     flex-direction: row;
@@ -29,18 +29,20 @@ body{
 
 
 
-.page4 .home-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: 30px;
-  left: 25%;
-  color: rgb(8, 0, 0);
+.page5 .home-content {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  width: 100%;
+  padding-top: 40px; /* space below navbar */
+  color:rgb(8,0,0);
+  /* border: 1px solid red; */
+  margin: 0 auto;
 }
 
-.page4 .home-content{
+
+.page5 .home-content{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -49,63 +51,39 @@ body{
   color:rgb(8,0,0);
 }
 
-.page4 .home-content .intro{
+.page5 .home-content .intro{
   margin:6px 0;
   color:#4a4a4a;
   font-size:22px;
 }
 
-.page4 .home-content .hl{
+.page5 .home-content .hl{
   color:#fe5000;
   font-weight:600;
 }
 
-.page4 .marry-box{
+.page5 .marry-box{
   margin-top:30px;
   /* text-align:center; */
   width:520px;
   margin-left:240px;
 }
 
-.page4 .marry-box h2{
+.page5 .marry-box h2{
   font-size:32px;
   font-weight:800;
   margin:20px 0 18px;
 }
 
-.page4 .status-toggle{
-  display:inline-flex;
-  background:transparent;
-  border-radius:20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  overflow:hidden;
-}
 
-.page4 .status-toggle .MuiToggleButton-root{
-  text-transform:none;
-  border:none;
-  padding:10px 22px;
-  border-radius:0;
-  background:#fff;
-  color:#333;
-}
-.page4 .status-toggle .MuiToggleButton-root.Mui-selected{
-  background:#fe5000;
-  color:#fff;
-  box-shadow:none;
-}
-
-.page4 .status-toggle .toggle-left{ border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.page4 .status-toggle .toggle-right{ border-top-right-radius:10px; border-bottom-right-radius:10px; }
-
-.page4 .marry-box .MuiTextField-root{
+.page5 .marry-box .MuiTextField-root{
   margin-top:8px;
 }
-.page4 .marry-box .MuiOutlinedInput-root{
+.page5 .marry-box .MuiOutlinedInput-root{
   border-radius:10px;
 }
 
-.page4 .account-button2{
+.page5 .account-button2{
   background:#fe5000;
   border-radius:24px;
   padding:10px 36px;
@@ -113,19 +91,19 @@ body{
   box-shadow:none;
 }
 
-.page4 .kids-box{
+.page5 .kids-box{
   width: 640px;
   margin: 24px auto 0;
   padding: 0 20px;
 }
 
-.page4 .kids-slider-wrap{
+.page5 .kids-slider-wrap{
   position: relative;
   width: 520px;
   margin: 18px auto;
 }
 
-.page4 .kids-badge{
+.page5 .kids-badge{
   position: absolute;
   top: -14px;
   left: 50%;
@@ -142,14 +120,14 @@ body{
   font-weight:700;
 }
 
-.page4 .they-are{
+.page5 .they-are{
   text-align:center;
   color:#9aa0a6;
   font-weight:700;
   margin-top:12px;
 }
 
-.page4 .kids-list{
+.page5 .kids-list{
   margin-top:18px;
   display:flex;
   flex-direction:column;
@@ -160,26 +138,25 @@ body{
   margin-right:auto;
 }
 
-.page4 .kid-row{
+.page5 .kid-row{
   display:flex;
   gap:18px;
   width:100%;
   align-items:center;
 }
 
-.page4 .kid-row .MuiOutlinedInput-root{
+.page5 .kid-row .MuiOutlinedInput-root{
   border-radius:10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   background:#fff;
 }
 
-.page4 .kid-age .MuiOutlinedInput-root{
+.page5 .kid-age .MuiOutlinedInput-root{
   border-radius:10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-/* keep Next button centered */
-.page4 .account-button2{
+.page5 .account-button2{
   background:#fe5000;
   border-radius:24px;
   padding:10px 36px;
@@ -187,7 +164,8 @@ body{
   box-shadow:none;
 }
 
-/* responsive */
+
+
 @media (max-width:780px){
-  .page4 .kids-box, .page4 .kids-list, .page4 .kids-slider-wrap{ width: 90%; }
+  .page5 .kids-box, .page5 .kids-list, .page5 .kids-slider-wrap{ width: 90%; }
 }

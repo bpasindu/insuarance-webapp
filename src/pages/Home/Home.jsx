@@ -15,13 +15,15 @@ import man6 from "../../assets/man6.png";
 import man7 from "../../assets/man7.png";
 import { Link } from "react-router-dom";
 import Footer from "../../common/component/Footer/Footer";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 
 export default function Home() {
   return (
     <div className="home">
       <Navbar>
         <Stack spacing={2} direction="row">
-          <Button variant="outlined" className="account-button1">
+          <Button variant="outlined" className="account-button1" sx={{ textTransform: "none" }}>
             Already have an account
           </Button>
         </Stack>
@@ -35,7 +37,7 @@ export default function Home() {
           <Link to="/page2" style={{ textDecoration: 'none' }}> 
           <Stack spacing={2} direction="row">
           <Button variant="contained" className="account-button2">
-            get started
+            get started <ArrowForwardIcon style={{ marginLeft: "8px" }}/>
           </Button>
         </Stack>
         </Link>

@@ -38,7 +38,7 @@ export default function Page4() {
   const data = useSelector((state) => state.user.data);
 
   const [status, setStatus] = React.useState(data.maritalStatus || "single");
-
+  
   const handleStatus = (event, newStatus) => {
     if (newStatus !== null) {
       setStatus(newStatus);
@@ -62,7 +62,7 @@ export default function Page4() {
       <Navbar>
         <Stack spacing={2} direction="row" className="card2">
           <div className="card1">
-            <ArrowBackIcon />
+            <Link to="/page3" sx={{ textDecoration: "none" }}> <ArrowBackIcon /> </Link>
             <h3>My details</h3>
             <Progresscircle value1={33} num={1} />
           </div>
@@ -132,7 +132,7 @@ export default function Page4() {
 
           <Link to="/page5" style={{ textDecoration: "none", marginTop: 40 }}>
             <Stack spacing={2} direction="row" justifyContent="center">
-              <Button variant="contained" className="account-button2">
+              <Button variant="contained" className="account-button2" sx={{m:3}}>
                 Next <ArrowForwardIcon />
               </Button>
             </Stack>

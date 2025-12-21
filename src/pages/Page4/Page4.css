@@ -36,7 +36,7 @@ body{
   justify-content: center;
   position: relative;
   top: 30px;
-  left: 25%;
+  left:0%;
   color: rgb(8, 0, 0);
 }
 
@@ -47,6 +47,7 @@ body{
   justify-content:flex-start;
   padding-top:120px;
   color:rgb(8,0,0);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .page4 .home-content .intro{
@@ -77,8 +78,8 @@ body{
   display:inline-flex;
   background:transparent;
   border-radius:20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  overflow:hidden;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.06); */
+  /* overflow:hidden; */
 }
 
 .page4 .status-toggle .MuiToggleButton-root{
@@ -89,14 +90,15 @@ body{
   background:#fff;
   color:#333;
 }
+
 .page4 .status-toggle .MuiToggleButton-root.Mui-selected{
   background:#fe5000;
   color:#fff;
   box-shadow:none;
 }
 
-.page4 .status-toggle .toggle-left{ border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.page4 .status-toggle .toggle-right{ border-top-right-radius:10px; border-bottom-right-radius:10px; }
+.page4 .status-toggle .toggle-left{ border-radius:10px; }
+.page4 .status-toggle .toggle-right{ border-radius:10px; }
 
 .page4 .marry-box .MuiTextField-root{
   margin-top:8px;
@@ -111,4 +113,5 @@ body{
   padding:10px 36px;
   text-transform:none;
   box-shadow:none;
+  margin-top:20px;
 }

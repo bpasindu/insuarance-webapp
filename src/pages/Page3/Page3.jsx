@@ -17,6 +17,13 @@ import InputAdornment from "@mui/material/InputAdornment";
 import PersonIcon from "@mui/icons-material/Person";
 import { useDispatch, useSelector } from "react-redux";
 import { saveData } from "../../redux/userSlice";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
+import { Link } from "react-router-dom";
+
 
 const gender = [
   { value: "Male", label: "Mr." },
@@ -58,7 +65,7 @@ export default function Page3() {
       <Navbar>
         <Stack spacing={2} direction="row" className="card2">
           <div className="card1">
-            <ArrowBackIcon />
+            <Link to="/page2" sx={{ textDecoration: "none" }}> <ArrowBackIcon /> </Link>
             <h3>My details</h3>
             <Progresscircle value1={33} num={1} />
           </div>
@@ -75,7 +82,9 @@ export default function Page3() {
         <div className="form-box">
           <div className="first-row" style={{ display: "flex", gap: 12 }}>
             <Box sx={{ width: "10ch" }}>
-              <Typography sx={{ fontSize: 12, color: "#9aa0a6" }}>.</Typography>
+              <Typography sx={{ m: "-1px", fontSize: 12, color: "#9aa0a6" }}>
+                .
+              </Typography>
               <TextField
                 select
                 size="small"
@@ -91,7 +100,9 @@ export default function Page3() {
             </Box>
 
             <Box sx={{ width: "25ch" }}>
-              <Typography sx={{ fontSize: 12, color: "#9aa0a6" }}>First Name</Typography>
+              <Typography sx={{ fontSize: 12, color: "#9aa0a6" }}>
+                First Name
+              </Typography>
               <TextField
                 size="small"
                 value={data?.firstName || ""}
@@ -108,21 +119,51 @@ export default function Page3() {
           </div>
 
           <Box sx={{ width: "35ch", mt: 2 }}>
-            <Typography sx={{ fontSize: 12, color: "#9aa0a6" }}>Last name</Typography>
+            <Typography sx={{ fontSize: 12, color: "#9aa0a6" }}>
+              Last name
+            </Typography>
             <TextField
               size="small"
               value={data?.lastName || ""}
               onChange={handleChange("lastName")}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PersonIcon />
+                  </InputAdornment>
+                ),
+              }}
             />
 
             <Typography sx={{ fontSize: 12, color: "#9aa0a6", mt: 2 }}>
               My date of birth
             </Typography>
-            <TextField
+            {/* <TextField
               size="small"
               value={data?.dob || ""}
               onChange={handleChange("dob")}
-            />
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PersonIcon />
+                  </InputAdornment>
+                ),
+              }}
+            /> */}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={["DatePicker"]}>
+                <DatePicker
+                  label=""
+                  size="small"
+                  value={data?.dob ? dayjs(data.dob) : null} // wrap JS Date in Day.js
+                  onChange={(newValue) => {
+                    dispatch(
+                      saveData({ dob: newValue ? newValue.toDate() : null })
+                    );
+                  }}
+                />
+              </DemoContainer>
+            </LocalizationProvider>
           </Box>
         </div>
 
@@ -131,6 +172,10 @@ export default function Page3() {
             variant="contained"
             onClick={handleNext}
             disabled={!isValid}
+            sx={{
+              backgroundColor: "rgba(254, 80, 0, 1)",
+              borderRadius: "20px",
+            }}
           >
             Next <ArrowForwardIcon />
           </Button>

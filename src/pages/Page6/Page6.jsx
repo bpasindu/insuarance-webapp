@@ -26,10 +26,18 @@ import { styled } from "@mui/material/styles";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import PeopleIcon from "@mui/icons-material/People";
-import WomanIcon from '@mui/icons-material/Woman';
+import WomanIcon from "@mui/icons-material/Woman";
 import Slider from "@mui/material/Slider";
-import ChildCareIcon from '@mui/icons-material/ChildCare';
+import ChildCareIcon from "@mui/icons-material/ChildCare";
 import Button1 from "../../common/component/Button/Button";
+import Goalcard from "../../common/component/Goalcard/Goalcard";
+import goal1 from "../../assets/goal1.jpg";
+import goal2 from "../../assets/goal2.jpg";
+import goal3 from "../../assets/goal3.jpg";
+import goal4 from "../../assets/goal4.jpg";
+import goal5 from "../../assets/goal5.jpg";
+import goal6 from "../../assets/goal6.jpg";
+import goal7 from "../../assets/goal7.jpg";
 
 const bull = (
   <Box
@@ -41,13 +49,12 @@ const bull = (
 );
 
 export default function Page6() {
-
   return (
     <div className="page4 page6">
       <Navbar>
         <Stack spacing={2} direction="row" className="card2">
           <div className="card1">
-            <ArrowBackIcon />
+            <Link to="/page5" sx={{ textDecoration: "none" }}> <ArrowBackIcon /> </Link>
             <h3>My details</h3>
             <Progresscircle value1={100} num={3} />
           </div>
@@ -55,34 +62,75 @@ export default function Page6() {
       </Navbar>
 
       <div className="home-content1">
-        <h1>what are your main goals <br/> in life?</h1>
+        <h2>
+          what are your main goals <br /> in life?
+        </h2>
         <div className="goal-buttons">
-            <Button1 name="All goals" className="goal-btn"/>
-            <Button1 name="Goal Timeline" className="goal-btn"/>
-            <Button1 name="+ Add Goal" className="goal-btn"/>
+          <Button1
+            name="All goals"
+            color={"rgba(126, 118, 118, 1)"}
+            className="goal-btn"
+          />
+          <Button1
+            name="Goal Timeline"
+            color={"rgba(136, 134, 134, 1)"}
+            className="goal-btn"
+          />
+          <Button1
+            name="+ Add Goal"
+            color={"rgba(254, 80, 0, 1)"}
+            className="goal-btn goal-btn3"
+            sx={{position: 'fixed', right: '60px'}}
+          />
         </div>
         <div className="goal-cards">
-            <Card className="goal-card">
-                <CardContent>
-                    <Typography variant="h6" component="div">
-                        Buy a house
-                    </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                        Target Date: 2028
-                    </Typography>
-                    <Typography variant="body2">
-                        Save $500 monthly to reach your goal of $30,000
-                    </Typography>
-                </CardContent>
-            </Card> 
+          <Goalcard
+            img={goal1}
+            text={"Health and wellbeing of our family"}
+            className="card-goal"
+          />
+          <Goalcard
+            img={goal2}
+            text={"Protect my income"}
+            className="card-goal"
+          />
+          <Goalcard
+            img={goal3}
+            text={"My Retirement Saving"}
+            className="card-goal"
+          />
+          <Goalcard
+            img={goal4}
+            text={"Save for Ruwan’s college"}
+            className="card-goal"
+          />
+          <Goalcard
+            img={goal5}
+            text={"Save for Ruwani’s college"}
+            className="card-goal"
+          />
+          <Goalcard
+            img={goal6}
+            text={"Critical Illness and disability"}
+            className="card-goal"
+          />
+          <Goalcard
+            img={goal7}
+            text={"My  Kids’ Dream Wedding"}
+            className="card-goal"
+          />
         </div>
-
-        
       </div>
+
+      <Link to="/page6" style={{ textDecoration: "none", marginTop: 40 }}>
+        <Stack spacing={2} direction="row" justifyContent="center">
+          <Button variant="contained" className="account-button2">
+            Next <ArrowForwardIcon />
+          </Button>
+        </Stack>
+      </Link>
 
       <Footer />
     </div>
   );
 }
-
-

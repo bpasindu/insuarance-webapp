@@ -50,7 +50,7 @@ export default function Page5() {
       <Navbar>
         <Stack spacing={2} direction="row" className="card2">
           <div className="card1">
-            <ArrowBackIcon />
+            <Link to="/page4" sx={{ textDecoration: "none" }}> <ArrowBackIcon /> </Link>
             <h3>My details</h3>
             <Progresscircle value1={66} num={2} />
           </div>
@@ -146,6 +146,7 @@ export default function Page5() {
           </Link>
         </div>
       </div>
+      
 
       <Footer />
     </div>

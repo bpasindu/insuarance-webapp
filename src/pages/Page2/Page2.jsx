@@ -10,13 +10,14 @@ import man2 from "../../assets/man2.png";
 import imgcard from "../../assets/imgcard.jpg";
 import circle2 from "../../assets/circle2.png";
 import circle1 from "../../assets/circle1.png";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function Page2() {
   return (
     <div className="home">
       <Navbar>
         <Stack spacing={2} direction="row">
-          <Button variant="outlined" className="account-button1">
+          <Button variant="outlined" className="account-button1" sx={{ textTransform: "none" }}>
             Already have an account
           </Button>
         </Stack>
@@ -30,7 +31,7 @@ export default function Page2() {
           <Link to="/page3" style={{ textDecoration: "none" }}>
             <Stack spacing={2} direction="row">
               <Button variant="contained" className="account-button2">
-                get started
+                get started <ArrowForwardIcon style={{ marginLeft: "8px" }}/>
               </Button>
             </Stack>
           </Link>
